@@ -41,7 +41,7 @@ const MovieDetails = ( props) => {
         </li>
         {movie.genres.map((g) => (
           <li key={g.name}>
-            <Chip label={g.name} sx={{...chip}} />
+            <Chip label={g.name} className={{...chip}} />
           </li>
         ))}
       </Paper>
