@@ -49,7 +49,7 @@ export default function MovieCard(props) {
         </IconButton>
         <Link to={`/movies/${movie.id}`}>
           <Button variant="outlined" size="medium" color="primary">
-             More Info ...
+           More Info ...
           </Button>
         </Link>
       </CardActions>
