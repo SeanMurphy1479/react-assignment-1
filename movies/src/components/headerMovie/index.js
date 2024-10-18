@@ -13,7 +13,7 @@ const MovieHeader = (props) => {
 
   return (
     <Paper 
-        component="div" 
+        component="div"
         sx={{
             display: "flex",
             justifyContent: "space-around",
