@@ -47,5 +47,11 @@ Itemize the technologies/techniques you researched independently and adopted in 
 i.e. aspects not covered in the lectures/labs. Include the source code filenames that illustrate these 
 (we do not require code excerpts) and provide references to the online resources that helped you (articles/blogs).
 
+Data: credits
+
+https://refine.dev/blog/react-query-guide/#performing-basic-data-fetching
+
+.slice()
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
 -->
 
