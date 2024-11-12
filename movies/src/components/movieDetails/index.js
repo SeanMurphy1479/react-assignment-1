@@ -94,7 +94,7 @@ const MovieDetails = ({ movie }) => {
         Cast
       </Typography>
       <Grid container spacing={2}>
-        {cast.map((castMember) => (
+        {cast.slice(0,10).map((castMember) => (
           <Grid item key={castMember.id} xs={12} sm={6} md={4} lg={3}>
             {/* Pass each cast member to the CastCard component */}
             <CastCard cast={castMember} />
