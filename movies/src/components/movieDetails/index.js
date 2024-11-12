@@ -6,9 +6,14 @@ import StarRate from "@mui/icons-material/StarRate";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
+import { getCredits } from "../../api/tmdb-api";
+import CastCard from "../castCard";
+import { useQuery } from "react-query"; 
+import Spinner from '../spinner';
+import { Grid } from "@mui/material";
 
 
 
@@ -20,13 +25,24 @@ const root = {
     padding: 1.5,
     margin: 0,
 };
+
 const chip = { margin: 0.5 };
 
 const MovieDetails = ({ movie }) => {  // Don't miss this!
   const [drawerOpen, setDrawerOpen] = useState(false);
-  
 
-  return (
+  const {data: credits, isLoading, isError} = useQuery(
+    ["movieCredits", movie.id],
+    () => getCredits(movie.id),
+    {enables: ! !movie.id}
+  );
+
+  if (isLoading) return <Spinner />; // Show spinner while loading
+  if (isError) return <Typography>Error loading credits</Typography>;
+
+  const { cast } = credits || {};
+
+    return (
     <>
       <Typography variant="h5" component="h3">
         Overview
@@ -73,8 +89,22 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
             <Chip label={countries.name} sx={{...chip}} />
           </li>
         ))}
-      </Paper>
-  
+        </Paper>
+
+        <Typography variant="h6" component="h4" sx={{ marginTop: 3 }}>
+        Cast
+      </Typography>
+      <Grid container spacing={2}>
+        {cast.map((castMember) => (
+          <Grid item key={castMember.id} xs={12} sm={6} md={4} lg={3}>
+            {/* Pass each cast member to the CastCard component */}
+            <CastCard cast={castMember} />
+          </Grid>
+        ))}
+      </Grid>
+
+
+
       <Fab
         color="secondary"
         variant="extended"
