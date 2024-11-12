@@ -13,7 +13,7 @@ import { getCredits } from "../../api/tmdb-api";
 import CastCard from "../castCard";
 import { useQuery } from "react-query"; 
 import Spinner from '../spinner';
-import { Grid } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 
 
 
@@ -28,20 +28,19 @@ const root = {
 
 const chip = { margin: 0.5 };
 
-const MovieDetails = ({ movie }) => {  // Don't miss this!
+const MovieDetails = ({ movie }) => {  
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const {data: credits, isLoading, isError} = useQuery(
-    ["movieCredits", movie.id],
-    () => getCredits(movie.id),
-    {enables: ! !movie.id}
-  );
+  const {data: credits, isLoading, isError} = useQuery(["movieCredits", movie.id], () => getCredits(movie.id));
 
-  if (isLoading) return <Spinner />; // Show spinner while loading
-  if (isError) return <Typography>Error loading credits</Typography>;
+  if (isLoading) {
+    return <Spinner />;
+  } 
+  if (isError) {
+    return <Typography>Error loading credits</Typography>;
+  }
 
-  const { cast } = credits || {};
-
+  const cast = credits.cast;
     return (
     <>
       <Typography variant="h5" component="h3">
