@@ -1,35 +1,41 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
-import { getActorDetails } from "../api/tmdb-api";
+import { getActorDetails, getActorMovies } from "../api/tmdb-api";
 import Spinner from "../components/spinner";
 import ActorDetails from "../components/actorDetails";
 import PageTemplate from "../components/templateActor";
 
-const ActorDetailsPage = (props) => {
+const ActorDetailsPage = () => {
     const { id } = useParams(); 
 
-  // Fetching actor details
-  const { data: actor, error, isLoading, isError } = useQuery(
+  const { data: actor, Aerror, isALoading, isAError } = useQuery(
     ["actorDetails", { id }],
     () => getActorDetails(id)
   );
 
-  // Loading state for actor details
-  if (isLoading) {
+  const { data: movies, Merror, isMLoading, isMError } = useQuery(
+    ["actorMovies", { id }],
+    () => getActorMovies(id)
+  );
+
+  if (isALoading || isMLoading) {
     return <Spinner />;
   }
 
-  if (isError) {
-    return <div>Error loading actor details: {error.message}</div>;
+  if (isAError) {
+    return <div>Error loading actor details: {Aerror.message}</div>;
+  }
+
+  if (isMError) {
+    return <div>Error loading actor details: {Merror.message}</div>;
   }
 
   return (
     <>
       {actor ? (
         <PageTemplate actor={actor}>
-           
-          <ActorDetails actor={actor} />
+          <ActorDetails actor={actor} movies={movies?.cast || []} />
         </PageTemplate>
       ) : (
         <p>Waiting for actor details...</p>

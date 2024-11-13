@@ -7,41 +7,9 @@ import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
 
-const MovieHeader = ({movie,actor}) => {
+const MovieHeader = ({movie}) => {
   const navigate = useNavigate();
 
-  if(actor){
-    <Paper
-        component="div"
-        sx={{
-          display: "flex",
-          justifyContent: "space-around",
-          flexWrap: "wrap",
-          padding: 1.5,
-          margin: 0,
-        }}
-      >
-        <IconButton aria-label="go back" onClick={() => navigate(-1)}>
-          <ArrowBackIcon color="primary" fontSize="large" />
-        </IconButton>
-
-        <Typography variant="h4" component="h3">
-          {actor.name}
-          <br />
-          <span sx={{ fontSize: "1.5rem" }}>
-            {actor.known_for_department && `Known for: ${actor.known_for_department}`}
-          </span>
-        </Typography>
-
-        <IconButton aria-label="go forward" onClick={() => navigate(+1)}>
-          <ArrowForwardIcon color="primary" fontSize="large" />
-        </IconButton>
-      </Paper>
-  }
-
-
-
-    else {
   return (
     <Paper 
         component="div"
@@ -71,7 +39,7 @@ const MovieHeader = ({movie,actor}) => {
       </IconButton>
     </Paper>
   );
-  }
 };
+
 
 export default MovieHeader;
