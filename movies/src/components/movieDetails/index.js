@@ -15,8 +15,6 @@ import { useQuery } from "react-query";
 import Spinner from '../spinner';
 import Grid from "@mui/material/Grid2";
 
-
-
 const root = {
     display: "flex",
     justifyContent: "center",
@@ -40,6 +38,7 @@ const MovieDetails = ({ movie }) => {
     return <Typography>Error loading credits</Typography>;
   }
 
+ 
   const cast = credits.cast;
     return (
     <>

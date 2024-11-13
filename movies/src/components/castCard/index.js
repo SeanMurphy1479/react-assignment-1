@@ -7,14 +7,16 @@ import Avatar from "@mui/material/Avatar";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import img from '../../images/film-poster-placeholder.png';
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CastCard = ({ cast }) => {
     return (
+    <Link to={`/person/${cast.id}`} style={{ textDecoration: "none"}}>
         <Card>
             <CardHeader
             avatar = {
                 <Avatar sx ={{ backgroundColor: 'blue'}}>
-                    {cast.popularity >= 50 ? <StarRateIcon /> : null}
+                    {cast.popularity >= 40 ? <StarRateIcon /> : null}
                 </Avatar>
             }
             title={
@@ -27,8 +29,10 @@ const CastCard = ({ cast }) => {
             <CardMedia 
             sx = {{height: 400}}
             image = {cast.profile_path ? `https://image.tmdb.org/t/p/w500/${cast.profile_path}`: img}
+            alt={cast.name}
             />
         </Card>
+    </Link>
     );
 };
 export default CastCard;
