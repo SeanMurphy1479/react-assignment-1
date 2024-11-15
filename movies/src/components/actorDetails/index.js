@@ -3,11 +3,7 @@ import Typography from "@mui/material/Typography";
 import Avatar from '@mui/material/Avatar';
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid2";
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
-import img from '../../images/film-poster-placeholder.png';
-import { Link } from "react-router-dom";
-import { CardContent } from "@mui/material";
+import SmallMovieCard from "../smallMovieCard"; 
 
 const root = {
   display: "flex",
@@ -48,34 +44,15 @@ const ActorDetails = ({ actor, movies }) => {
       <Typography variant="h6" gutterBottom>
         Appears In:
       </Typography>
-      
-      <Grid container spacing={2}>
-        {movies.length > 0 ? (
-          movies.slice(0,20).map((movie) => (
-            <Grid item key={movie.id} xs={6} sm={4} md={3}>
-              <Link to={`/movies/${movie.id}`} style={{ textDecoration: "none" }}>
-                <Card sx={{ maxWidth: 150, margin: 1 }}>
-                  <CardMedia
-                    sx={{ height: 225 }}
-                    image={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : img}
-                    title={movie.title}
-                  />
-                  <CardContent>
-                    <Typography variant="subtitle1" component="p" noWrap>
-                      {movie.title}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      {movie.release_date || "Unknown Date"}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Link>
-            </Grid>
-          ))
-        ) : (
-          <Typography>No movies found for this actor.</Typography>
-        )}
-      </Grid>
+      <Paper>
+        <Grid container spacing={2}>
+          {movies.slice(0, 20).map((movie) => (
+        <Grid item key={movie.id} xs={12} sm={6} md={4} lg={3}>
+          <SmallMovieCard movie={movie} />
+        </Grid>
+        ))}
+        </Grid>
+      </Paper>
     </>
   );
 };

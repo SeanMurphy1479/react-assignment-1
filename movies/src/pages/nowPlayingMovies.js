@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PageTemplate from '../components/templateMovieListPage';
 import { getNowPlayingMovies } from "../api/tmdb-api";
 import AddToWatch from '../components/cardIcons/addToWatch';
