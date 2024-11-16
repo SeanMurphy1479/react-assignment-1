@@ -4,10 +4,13 @@ import { getUpcomingMovies } from "../api/tmdb-api";
 import AddToWatch from '../components/cardIcons/addToWatch'
 import Spinner from '../components/spinner';
 import { useQuery } from "react-query";
+import { Pagination } from "@mui/material";
 
-const upcomingMovies = (props) => {
+const UpcomingMovies = (props) => {
+  const [page, setPage] = useState(1);
+
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { data, error, isLoading, isError } = useQuery('upcoming', getUpcomingMovies)
+  const { data, error, isLoading, isError } = useQuery(['upcoming',page],() => getUpcomingMovies(page))
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [movies, setMovies] = useState([]);
 
@@ -21,7 +24,12 @@ const upcomingMovies = (props) => {
 
   const upcomingMovies = data.results;
 
+  const handlePageChange = (event,value) => {
+    setPage(value);
+  }
+
   return (
+    <>
     <PageTemplate
       title='Upcoming Movies'
       movies={upcomingMovies}
@@ -29,6 +37,13 @@ const upcomingMovies = (props) => {
         return <AddToWatch movie={movie} />
       }}
     />
+      <Pagination
+      count={data.total_pages}
+      page={page}
+      onChange={handlePageChange}
+      sx={{ display: "flex", justifyContent: "center"}}
+    />
+    </>
   );
 };
-export default upcomingMovies;
+export default UpcomingMovies;
