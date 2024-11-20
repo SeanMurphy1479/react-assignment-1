@@ -2,11 +2,16 @@
 
 Name: Seán Murphy
 
-<!--
+Student Number: 20101936
 
 ## Overview.
+This repository is a web application of a TMDB Client offering these features
 
-[A brief statement on the content of this repository.]
+- Browse and discover **Movies**, **Popular Movies**, **Upcoming Movies** and **Now Playing Movies**.
+- Set Movies as a Favourite moive or add a Movie to a Watchlist both of which can be seen on thier own pages.
+- View information about individual movies, including reviews, actors, and reccomended movies.
+- Add your own review.
+- View information about Actor's and the movies they star in.
 
 ### Features.
 [ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
@@ -65,8 +70,7 @@ npm start
 + /person/:id - Displays Details About an Actor 
 + /movies/watchlist - Displays Movies that have been added to user's watchlist
 
-[If relevant, state what aspects of your app are protected (i.e. require authentication) and what is public.]
-
+<!--
 ## Independent learning (If relevant).
 
 Itemize the technologies/techniques you researched independently and adopted in your project, 
