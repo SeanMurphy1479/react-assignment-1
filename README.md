@@ -1,4 +1,4 @@
-# Assignment 1 - ReactJS app.
+# Assignment 1 - ReactJS Movie app.
 
 Name: Seán Murphy
 
@@ -17,10 +17,11 @@ This repository is a web application of a TMDB Client offering these features
 [ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
  
 + Ranking Movies on Rating 
-+ Feature 2
-+ Feature 3
-+ etc
-+ etc
++ View Popular Movies
++ View Now Playing Movies
++ View Actors and Reccomended movie in Movies Decriptions
++ View Actor Descriptions and Movies they star in
++ Finished Watchlist functinality 
 
 ## Setup requirements.
 [ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
