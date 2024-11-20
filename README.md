@@ -11,15 +11,39 @@ Name: Seán Murphy
 ### Features.
 [ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
  
-+ Feature 1
++ Ranking Movies on Rating 
 + Feature 2
 + Feature 3
 + etc
 + etc
 
 ## Setup requirements.
-
 [ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
+
+1. Clone the repository
+
+``` 
+git clone https://github.com/SeanMurphy1479/react-assignment-1
+cd movies
+```
+
+2. Ensure Node.js is installed
+```
+npm install
+npm install --save-dev @babel/plugin-proposal-private-property-in-object
+```
+
+3. Set Up API Key
+Create a .env file in the root directory with the following information and your own API key
+```
+REACT_APP_TMDB_KEY=<YOUR-API-KEY>
+FAST_REFRESH=false
+```
+
+4.Start the Local Website
+```
+npm start
+```
 
 ## API endpoints.
 
