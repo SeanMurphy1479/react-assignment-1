@@ -29,7 +29,7 @@ This repository is a web application of a TMDB Client offering these features
 1. Clone the repository
 
 ``` 
-git clone https://github.com/SeanMurphy1479/react-assignment-1
+git clone https://github.com/SeanMurphy1479/react-assignment-1.git
 cd movies
 ```
 
