@@ -49,19 +49,21 @@ npm start
 
 [ List the __additional__ TMDB endpoints used, giving the description and pathname for each one.] 
 
-e.g.
-+ Discover list of movies - discover/movie
-+ Movie details - movie/:id
-+ Movie genres = /genre/movie/list
++ Popular list of movies - movie/popular
++ Credits list of movies - movie/:id/credits
++ Actor Details - person/:id
++ Actor Movies Credits - person/:id/movie_credits
++ Now playing list of movies -movie/now_playing
++ Recommended Movies - movie/:id/recommendations
 
 ## Routing.
 
 [ List the __new routes__ supported by your app and state the associated page.]
 
-+ /blogs - displays all published blogs.
-+ /blogs/:id - displays a particular blog.
-+ /blogs/:id/comments - detail view of a particular blog and its comments.
-+ etc.
++ /movies/popular - Displays Popular Movies
++ /movies/now_playing - Displays Movie that are Playing in Cinema's 
++ /person/:id - Displays Details About an Actor 
++ /movies/watchlist - Displays Movies that have been added to user's watchlist
 
 [If relevant, state what aspects of your app are protected (i.e. require authentication) and what is public.]
 
