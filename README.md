@@ -20,7 +20,8 @@ This repository is a web application of a TMDB Client offering these features
 + View Now Playing Movies
 + View Actors and Reccomended movie in Movies Decriptions
 + View Actor Descriptions and Movies they star in
-+ Finished Watchlist functinality 
++ Finished Watchlist functinality
++ Added Pagination functinality on display movie pages
 
 ## Setup requirements.
 
