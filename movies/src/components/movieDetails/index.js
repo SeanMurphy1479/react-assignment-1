@@ -112,7 +112,7 @@ const MovieDetails = ({ movie }) => {
       </Paper>
 
       <Typography variant="h6" gutterBottom>
-        Reccomendations:
+        Recomendations:
       </Typography>
       <Paper>
         <Grid container spacing={2}>

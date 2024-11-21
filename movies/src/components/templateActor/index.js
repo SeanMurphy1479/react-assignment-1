@@ -1,5 +1,6 @@
 import React, { act } from "react";
-import Header from "../headerMovieList";
+import Header from "../headerMovie";
+
 
 
 const ActorTemplate = ({ actor, children }) => {
@@ -9,8 +10,7 @@ const ActorTemplate = ({ actor, children }) => {
   
     return (
         <>
-        <Header actor={actor.name} />  
-        <h1>{actor.name}</h1>
+        <Header actor={actor} />  
         <div>{children}</div>
       </>
     );

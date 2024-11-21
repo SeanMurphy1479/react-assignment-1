@@ -29,7 +29,6 @@ const ActorDetails = ({ actor, movies }) => {
             />
           </Grid>
           <Grid item>
-            <Typography variant="h4">{actor.name}</Typography>
             <Typography variant="h6" color="textSecondary">
               Known For: {actor.known_for_department}
             </Typography>
