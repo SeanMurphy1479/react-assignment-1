@@ -14,7 +14,6 @@ This repository is a web application of a TMDB Client offering these features
 - View information about Actor's and the movies they star in.
 
 ### Features.
-[ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
  
 + Ranking Movies on Rating 
 + View Popular Movies
@@ -24,7 +23,6 @@ This repository is a web application of a TMDB Client offering these features
 + Finished Watchlist functinality 
 
 ## Setup requirements.
-[ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
 
 1. Clone the repository
 
@@ -53,8 +51,6 @@ npm start
 
 ## API endpoints.
 
-[ List the __additional__ TMDB endpoints used, giving the description and pathname for each one.] 
-
 + Popular list of movies - movie/popular
 + Credits list of movies - movie/:id/credits
 + Actor Details - person/:id
@@ -63,8 +59,6 @@ npm start
 + Recommended Movies - movie/:id/recommendations
 
 ## Routing.
-
-[ List the __new routes__ supported by your app and state the associated page.]
 
 + /movies/popular - Displays Popular Movies
 + /movies/now_playing - Displays Movie that are Playing in Cinema's 
